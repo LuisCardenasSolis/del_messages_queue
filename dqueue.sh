@@ -3,6 +3,8 @@
 SENDER="$1"
 RECIPIENT="$2"
 
+[ "$1" = "-q" ] && /opt/zimbra/common/sbin/mailq && exit
+
 #si un parametro es vacio - ERROR
 if [[ -z $SENDER || -z $RECIPIENT ]]; then
 	echo "Error de Parametros -> 1. sender(all) - 2. recipient(all)"
